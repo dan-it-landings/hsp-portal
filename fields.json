@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "sections": [
+    {
+      "id": "A",
+      "title": "Чисельність на кінець місяця",
+      "fields": [
+        {"key": "hc_end", "label": "Облікова кількість штатних працівників на кінець місяця", "unit": "осіб", "type": "int", "required": true},
+        {"key": "hc_women", "label": "з них жінки", "unit": "осіб", "type": "int", "required": false},
+        {"key": "cat_managers", "label": "Керівники", "unit": "осіб", "type": "int", "required": true, "group": "За категоріями (сума = облікова кількість)"},
+        {"key": "cat_professionals", "label": "Професіонали та фахівці", "unit": "осіб", "type": "int", "required": true, "group": "За категоріями (сума = облікова кількість)"},
+        {"key": "cat_clerks", "label": "Технічні службовці", "unit": "осіб", "type": "int", "required": true, "group": "За категоріями (сума = облікова кількість)"},
+        {"key": "cat_workers", "label": "Робітники", "unit": "осіб", "type": "int", "required": true, "group": "За категоріями (сума = облікова кількість)"},
+        {"key": "hc_part_time", "label": "Працюють на умовах неповного робочого часу", "unit": "осіб", "type": "int", "required": true},
+        {"key": "hc_remote", "label": "Працюють дистанційно або надомно", "unit": "осіб", "type": "int", "required": false},
+        {"key": "hc_maternity", "label": "У відпустці у зв'язку з вагітністю, пологами та доглядом за дитиною", "unit": "осіб", "type": "int", "required": true},
+        {"key": "hc_mobilized", "label": "Мобілізовані або призвані, за якими зберігається місце роботи", "unit": "осіб", "type": "int", "required": true},
+        {"key": "hc_disabled", "label": "Особи з інвалідністю", "unit": "осіб", "type": "int", "required": false}
+      ]
+    },
+    {
+      "id": "B",
+      "title": "Середня чисельність за місяць",
+      "fields": [
+        {"key": "hc_avg", "label": "Середньооблікова кількість штатних працівників", "unit": "осіб", "type": "dec", "required": true},
+        {"key": "hc_ext_part", "label": "Зовнішні сумісники (середня кількість)", "unit": "осіб", "type": "dec", "required": false},
+        {"key": "hc_gph", "label": "Особи, що працюють за цивільно-правовими договорами", "unit": "осіб", "type": "int", "required": false},
+        {"key": "fte", "label": "Еквівалент повної зайнятості штатних (FTE)", "unit": "FTE", "type": "dec", "required": false}
+      ]
+    },
+    {
+      "id": "C",
+      "title": "Рух персоналу за місяць",
+      "fields": [
+        {"key": "hired", "label": "Прийнято працівників", "unit": "осіб", "type": "int", "required": true},
+        {"key": "transfers_in", "label": "з них переведено з інших компаній групи", "unit": "осіб", "type": "int", "required": false},
+        {"key": "fired", "label": "Звільнено працівників", "unit": "осіб", "type": "int", "required": true},
+        {"key": "fired_voluntary", "label": "з них за власним бажанням", "unit": "осіб", "type": "int", "required": true},
+        {"key": "transfers_out", "label": "з них переведено в інші компанії групи", "unit": "осіб", "type": "int", "required": false},
+        {"key": "vacancies", "label": "Відкриті вакансії на кінець місяця", "unit": "шт.", "type": "int", "required": false}
+      ]
+    },
+    {
+      "id": "D",
+      "title": "Фонд оплати праці (нарахований за місяць)",
+      "fields": [
+        {"key": "fop_total", "label": "Фонд оплати праці штатних працівників, всього", "unit": "грн", "type": "money", "required": true},
+        {"key": "fop_base", "label": "фонд основної заробітної плати", "unit": "грн", "type": "money", "required": true, "group": "Структура ФОП (сума = ФОП всього)"},
+        {"key": "fop_extra", "label": "фонд додаткової заробітної плати (надбавки, доплати, премії, відпускні)", "unit": "грн", "type": "money", "required": true, "group": "Структура ФОП (сума = ФОП всього)"},
+        {"key": "fop_other", "label": "інші заохочувальні та компенсаційні виплати (разові премії, матдопомога)", "unit": "грн", "type": "money", "required": true, "group": "Структура ФОП (сума = ФОП всього)"},
+        {"key": "fop_ext_part", "label": "Нараховано зовнішнім сумісникам", "unit": "грн", "type": "money", "required": false},
+        {"key": "fop_gph", "label": "Нараховано за цивільно-правовими договорами", "unit": "грн", "type": "money", "required": false},
+        {"key": "esv", "label": "Нарахований ЄСВ", "unit": "грн", "type": "money", "required": true},
+        {"key": "hours_worked", "label": "Відпрацьовано людино-годин штатними працівниками", "unit": "год", "type": "dec", "required": false}
+      ]
+    },
+    {
+      "id": "E",
+      "title": "Середня заробітна плата і виплати",
+      "fields": [
+        {"key": "avg_salary", "label": "Середня заробітна плата штатного працівника (брутто, нарахована)", "unit": "грн", "type": "money", "required": true, "hint": "ФОП штатних ÷ середньооблікова кількість"},
+        {"key": "below_min", "label": "Працівники повного робочого часу з нарахуванням нижче мінімальної зарплати", "unit": "осіб", "type": "int", "required": true},
+        {"key": "net_paid", "label": "Виплачено працівникам «на руки» за місяць", "unit": "грн", "type": "money", "required": false},
+        {"key": "arrears", "label": "Заборгованість із виплати заробітної плати на кінець місяця", "unit": "грн", "type": "money", "required": true}
+      ]
+    }
+  ],
+  "comment": {"key": "comment", "label": "Коментар до даних (пояснення змін, особливості місяця)"}
+}

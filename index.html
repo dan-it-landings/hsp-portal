@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Портал даних про чисельність і заробітну плату</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="logo" aria-hidden="true">▦</span><div><div class="brand-title">Чисельність і заробітна плата</div><div class="brand-sub" id="groupName"></div></div></div>
+  <div class="who" id="who" hidden><span id="whoText"></span><button class="btn ghost sm" id="logoutBtn">Вийти</button></div>
+</header>
+<main id="app" aria-live="polite"></main>
+<div class="toast" id="toast" role="status" hidden></div>
+<dialog id="modal"><div class="modal-head"><h3 id="modalTitle"></h3><button class="btn ghost sm" id="modalClose" aria-label="Закрити">✕</button></div><div id="modalBody"></div></dialog>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
